@@ -1,0 +1,36 @@
+QMenuBar {
+    background: transparent;
+    padding: 0 $sizeUnit * 2 + px;
+    height: $height-normal;
+    color: $colorTextBase;
+    border-bottom: #{$lineWidth}px $lineType
+        mix($colorTextBase, $colorBgBase, 10%);
+    font-size: $font-normal;
+
+    &::item {
+        padding: 0 $sizeUnit * 4 + px;
+        margin: 0 $sizeUnit + px;
+        background: transparent;
+        border-radius: $borderRadius * 0.5 + px;
+        line-height: $lineHeight-normal;
+        min-height: $height-normal;
+        color: $colorTextBase;
+        font-size: $font-normal;
+
+        &:hover {
+            background-color: mix($colorPrimary, $colorBgBase, 10%);
+            color: $colorPrimary;
+        }
+
+        &:selected {
+            background-color: mix($colorPrimary, $colorBgBase, 15%);
+            color: $colorPrimary;
+            font-weight: 500;
+        }
+
+        &:disabled {
+            color: mix($colorTextBase, $colorBgBase, 50%);
+            background: transparent;
+        }
+    }
+}

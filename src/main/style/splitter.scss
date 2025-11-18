@@ -1,0 +1,25 @@
+// QSplitter styles for horizontal and vertical orientation
+QSplitter {
+    background-color: transparent;
+    &::handle {
+        margin: 0;
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        &:pressed {
+            background-color: rgba($colorPrimary, 0.2);
+        }
+
+        &:horizontal {
+            width: 3px;
+            margin: 0 $sizeUnit * 0.2 + px;
+            background-image: url(icons/splitter_vertical_drag_handle.svg);
+        }
+
+        &:vertical {
+            height: 3px;
+            margin: $sizeUnit * 0.2 + px 0;
+            background-image: url(icons/splitter_horizontal_drag_handle.svg);
+        }
+    }
+}

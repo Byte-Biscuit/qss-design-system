@@ -1,0 +1,42 @@
+[project]
+name = "qss-design-system"
+version = "0.0.2"
+description = "A QSS design system for PySide6 (Qt) desktop applications, inspired by Ant Design.Simply include the generated QSS file to apply a consistent visual style to common widgets (buttons, inputs, trees, dialogs, etc.) with minimal adjustments, enabling easy reuse and extension."
+keywords = ["qss", "pyside6", "qt", "stylesheet", "design-system", "antd", "ui", "theme"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: User Interfaces",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Byte-Biscuit/qss-desigin-system"
+"Source" = "https://github.com/Byte-Biscuit/qss-desigin-system"
+
+authors = [
+    { name = "Biscuit Zhou", email = "biscuit_zhou@outlook.com" }
+]
+dependencies = [
+    "pyside6>=6.9.0",
+    "libsass>=0.23.0",
+    "watchdog>=6.0.0",
+]
+readme = "README.md"
+requires-python = ">= 3.9"
+license = { text = "MIT" }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/qss_design_system"]

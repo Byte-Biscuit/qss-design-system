@@ -1,0 +1,71 @@
+QMenu {
+    background-color: $colorBgBase;
+    border: #{$lineWidth}px $lineType mix($colorTextBase, $colorBgBase, 15%);
+    //border-radius: #{$borderRadius}px;
+    padding: $sizeUnit * 0.5 + px;
+    font-size: $font-normal;
+    color: $colorTextBase;
+
+    &::icon {
+        width: $sizeUnit * 4 + px;
+        height: $sizeUnit * 4 + px;
+        padding: $sizeUnit * 0.2 + px $sizeUnit + px;
+    }
+    &::item {
+        padding: $sizeUnit * 0.2 + px $sizeUnit + px;
+        height: $height-normal;
+        line-height: $lineHeight-normal;
+        background-color: transparent;
+        border-radius: $borderRadius * 0.5 + px;
+        margin: 2px 0;
+        min-width: 160px;
+
+        // 悬浮状态
+        &:hover {
+            background-color: mix($colorPrimary, $colorBgBase, 10%);
+            color: $colorPrimary;
+        }
+
+        // 被选中状态
+        &:selected {
+            background-color: mix($colorPrimary, $colorBgBase, 15%);
+            color: $colorPrimary;
+            font-weight: 500;
+        }
+
+        // 禁用状态
+        &:disabled {
+            color: mix($colorTextBase, $colorBgBase, 50%);
+            background-color: transparent;
+        }
+    }
+
+    // 分隔线样式
+    &::separator {
+        height: 1px;
+        background-color: mix($colorTextBase, $colorBgBase, 10%);
+        margin: 4px 0;
+    }
+
+    // 子菜单箭头样式（可选）
+    &::indicator {
+        width: $sizeUnit * 4 + px;
+        height: $sizeUnit * 4 + px;
+
+        &:checked {
+            image: url(icons/check_box_checked_24.svg);
+        }
+
+        &:unchecked {
+            image: url(icons/check_box_unchecked_24.svg);
+        }
+
+        &:exclusive:checked {
+            image: url(icons/radio_button_checked_24.svg);
+        }
+
+        &:exclusive:unchecked {
+            image: url(icons/radio_button_unchecked_24.svg);
+        }
+    }
+}

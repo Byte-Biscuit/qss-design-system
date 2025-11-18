@@ -1,0 +1,25 @@
+QTabWidget {
+    background-color: $colorBgBase;
+    border: $lineWidth + px $lineType darken($colorBgBase, 25%);
+    border-radius: $borderRadius + px;
+    &::pane {
+        top: -$lineWidth * 2 + px;
+    }
+}
+QTabBar {
+    margin-left: $sizeUnit + px;
+    &::tab {
+        background-color: $colorBgBase;
+        color: $colorTextBase;
+        padding: $padding-normal;
+        height: $height-normal;
+        font-size: $font-normal;
+        &:selected {
+            color: $colorPrimary;
+            border-bottom: $lineWidth * 2 + px $lineType $colorPrimary;
+        }
+        &:hover {
+            color: $colorPrimary;
+        }
+    }
+}

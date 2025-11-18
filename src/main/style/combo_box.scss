@@ -1,0 +1,58 @@
+QComboBox {
+    min-height: $height-normal;
+    font-size: $font-normal;
+    color: $colorTextBase;
+    background: $colorBgBase;
+    border: $lineWidth + px $lineType $colorBorder;
+    border-radius: $borderRadius + px;
+    padding: $padding-normal;
+
+    &::down-arrow {
+        image: url(icons/combo_box_down_arrow_24.svg);
+    }
+    &::drop-down {
+        border: none;
+        background: transparent;
+        width: $sizePopupArrow + px;
+    }
+    &:hover {
+        border-color: $colorPrimary;
+    }
+    &:focus {
+        border-color: $colorPrimary;
+    }
+
+    &.small {
+        min-height: $height-small;
+        font-size: $font-small;
+        padding: $padding-small;
+    }
+    &.large {
+        min-height: $height-large;
+        font-size: $font-large;
+        padding: $padding-large;
+    }
+}
+
+QComboBox QAbstractItemView {
+    background: $colorBgBase;
+    border: $lineWidth + px $lineType $colorPrimary;
+    border-radius: $borderRadius + px;
+    font-size: $font-normal;
+    color: $colorTextBase;
+    outline: none;
+
+    &::item {
+        min-height: $height-normal;
+        padding: $sizeUnit * 0.1 + px $sizeUnit * 4 + px;
+        border: none;
+    }
+    &::item:selected {
+        background: $colorPrimary;
+        color: #fff;
+    }
+    &::item:hover {
+        background: lighten($colorPrimary, 40%);
+        color: $colorTextBase;
+    }
+}

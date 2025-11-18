@@ -1,0 +1,47 @@
+/* Vertical scrollbar styles */
+QScrollBar:vertical {
+    border: none;
+    background: transparent;
+    width: $sizeUnit * 2; // 8px
+    margin: $sizeUnit / 2 0; // 2px 0
+}
+QScrollBar::handle:vertical {
+    background: rgba(
+        $colorTextBase,
+        0.15
+    ); // Transparent handle based on text color
+    min-height: $sizeUnit * 5; // 20px
+    border-radius: $borderRadius / 2; // 3px
+}
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+    background: none; // Remove up/down buttons
+}
+
+/* Horizontal scrollbar styles */
+QScrollBar:horizontal {
+    border: none;
+    background: transparent;
+    height: $sizeUnit * 2; // 8px
+    margin: 0 $sizeUnit / 2; // 0 2px
+}
+QScrollBar::handle:horizontal {
+    background: rgba(
+        $colorTextBase,
+        0.15
+    ); // Transparent handle based on text color
+    min-width: $sizeUnit * 5; // 20px
+    border-radius: $borderRadius / 2; // 3px
+}
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
+    width: 0;
+    background: none; // Remove left/right buttons
+}
+
+/* Hover effect for scrollbar thumb */
+QScrollBar::handle:hover:vertical,
+QScrollBar::handle:hover:horizontal {
+    background: rgba($colorPrimary, 0.3);
+}

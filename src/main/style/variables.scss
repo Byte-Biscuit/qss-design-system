@@ -1,0 +1,61 @@
+$blue: #1677ff;
+$purple: #722ed1;
+$cyan: #13c2c2;
+$green: #52c41a;
+$magenta: #eb2f96;
+$red: #f5222d;
+$orange: #fa8c16;
+$yellow: #fadb14;
+$volcano: #fa541c;
+$geekblue: #2f54eb;
+$gold: #faad14;
+$lime: #a0d911;
+
+$colorPrimary: #1677ff;
+$colorSuccess: #52c41a;
+$colorWarning: #faad14;
+$colorError: #ff4d4f;
+$colorInfo: #1677ff;
+$colorLink: #0056b3;
+$colorTextBase: #141414;
+
+// Disabled State Colors
+$colorBgDisabled: #f5f5f5;
+$colorTextDisabled: #bfbfbf;
+$colorBorderDisabled: #d9d9d9;
+
+$colorBgBase: #ffffff;
+$colorBorder: #d9d9d9;
+// Line
+$lineWidth: 1;
+$lineType: solid;
+
+// Radius
+$borderRadius: 6;
+// Size
+$sizeUnit: 4;
+$sizeStep: 4;
+$sizePopupArrow: 16;
+// Control Base
+$controlHeight: 32;
+// zIndex
+$zIndexBase: 0;
+$zIndexPopupBase: 1000;
+// Image
+$opacityImage: 1;
+
+$height-small: $sizeUnit * 6 + px; // 24px
+$height-normal: $sizeUnit * 8 + px; // 32px
+$height-large: $sizeUnit * 10 + px; // 40px
+
+$padding-small: 0 $sizeUnit * 2 + px; // 0 8px
+$padding-normal: 0 $sizeUnit * 3 + px; // 0 12px
+$padding-large: 0 $sizeUnit * 4 + px; // 0 16px
+
+$font-small: $sizeUnit * 3 + px; // 12px
+$font-normal: $sizeUnit * 3.5 + px; // 14px
+$font-large: $sizeUnit * 4 + px; // 16px
+
+$lineHeight-small: $sizeUnit * 5 + px; // 20px
+$lineHeight-normal: $sizeUnit * 5.5 + px; // 22px
+$lineHeight-large: $sizeUnit * 6 + px; // 24px

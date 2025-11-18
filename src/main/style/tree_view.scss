@@ -1,0 +1,60 @@
+/**
+    * Tree View Styles
+    * This file contains the styles for the tree view component.
+    * It defines the appearance of the tree view, including colors, fonts, and hover effects.
+    * TreeView is only compatible with a single column. For multi-column cases, special handling of items is required.
+*/
+QTreeView {
+    background-color: $colorBgBase;
+    color: $colorTextBase;
+    font-size: $font-normal;
+    border: $lineWidth $lineType rgba($colorTextBase, 0.1);
+    border-radius: $borderRadius * 1px;
+    outline: none;
+
+    &::item {
+        height: $height-normal;
+        padding: 0 $sizeUnit * 1;
+        border-radius: $borderRadius * 1px;
+
+        &:selected {
+            background-color: rgba($colorPrimary, 0.1);
+            color: $colorPrimary;
+        }
+
+        &:hover {
+            background-color: rgba($colorPrimary, 0.05);
+        }
+    }
+
+    &::branch {
+        background: transparent;
+        &:has-children {
+            &:open {
+                image: url(icons/tree_view_branch_open.svg);
+                &:hover {
+                    image: url(icons/tree_view_branch_open_hover.svg);
+                }
+                &:selected {
+                    image: url(icons/tree_view_branch_open_selected.svg);
+                }
+            }
+
+            &:closed {
+                image: url(icons/tree_view_branch_closed.svg);
+                &:hover {
+                    image: url(icons/tree_view_branch_closed_hover.svg);
+                }
+                &:selected {
+                    image: url(icons/tree_view_branch_closed_selected.svg);
+                }
+            }
+        }
+        &:selected {
+            color: $colorPrimary;
+        }
+        &:hover {
+            background: transparent;
+        }
+    }
+}

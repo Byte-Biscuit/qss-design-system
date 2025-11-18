@@ -1,0 +1,32 @@
+QStatusBar {
+    background: $colorBgBase;
+    border-top: $lineWidth + px $lineType $colorBorder;
+    min-height: $height-normal;
+    font-size: $font-normal;
+    color: $colorTextBase;
+
+    &::item {
+        border: none;
+    }
+
+    &.info {
+        background-color: rgba($colorPrimary, 0.08);
+        background-repeat: no-repeat;
+        background-position: left center;
+        color: $colorPrimary;
+    }
+
+    &.warning {
+        background-color: rgba($colorWarning, 0.12);
+        background-repeat: no-repeat;
+        background-position: left center;
+        color: $colorWarning;
+    }
+
+    &.error {
+        background-color: rgba($colorError, 0.1);
+        background-repeat: no-repeat;
+        background-position: left center;
+        color: $colorError;
+    }
+}

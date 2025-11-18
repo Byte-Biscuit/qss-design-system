@@ -1,0 +1,75 @@
+// 状态背景函数
+@function state-bg($color) {
+    @return mix($color, $colorBgBase, 15%);
+}
+
+@function state-border($color) {
+    @return mix($color, $colorBgBase, 50%);
+}
+QLabel {
+    padding: $padding-normal;
+    font-size: $font-normal;
+    border-radius: #{$borderRadius}px;
+    background-color: transparent;
+    color: $colorTextBase;
+    white-space: nowrap;
+
+    &.info,
+    &.success,
+    &.warning,
+    &.error {
+        min-height: $height-normal;
+        max-height: $height-normal;
+    }
+    // Info state
+    &.info {
+        color: $colorInfo;
+        border: #{$lineWidth}px $lineType state-border($colorInfo);
+    }
+    // Success state
+    &.success {
+        background-color: state-bg($colorSuccess);
+        color: $colorSuccess;
+        border: #{$lineWidth}px $lineType state-border($colorSuccess);
+    }
+    // Warning state
+    &.warning {
+        background-color: state-bg($colorWarning);
+        color: $colorWarning;
+        border: #{$lineWidth}px $lineType state-border($colorWarning);
+    }
+    // Error state
+    &.error {
+        background-color: state-bg($colorError);
+        color: $colorError;
+        border: #{$lineWidth}px $lineType state-border($colorError);
+    }
+    &.small {
+        min-height: $height-small;
+        max-height: $height-small;
+        padding: $padding-small;
+        font-size: $font-small;
+    }
+    &.large {
+        min-height: $height-large;
+        max-height: $height-large;
+        padding: $padding-large;
+        font-size: $font-large;
+    }
+    // Special help style
+    &.help {
+        white-space: normal;
+        font-size: $font-normal;
+        line-height: $lineHeight-normal;
+        color: $colorInfo;
+        border: #{$lineWidth}px $lineType state-border($colorInfo);
+    }
+    // Image container
+    &.image {
+        background-color: $colorBgBase;
+        border: $lineWidth $lineType rgba($colorTextBase, 0.1);
+        border-radius: $borderRadius * 1px;
+        padding: $sizeUnit * 0.5 + px;
+        text-align: center;
+    }
+}

@@ -1,0 +1,114 @@
+// QSpinBox 和 QDoubleSpinBox 基础样式
+QSpinBox,
+QDoubleSpinBox {
+    background-color: $colorBgBase;
+    min-height: $height-normal;
+    padding: 0 $sizeUnit * 3 + px;
+    font-size: $font-normal;
+    border: $lineWidth + px $lineType $colorBorder;
+    border-radius: $borderRadius + px;
+    color: $colorTextBase;
+
+    &::up-button,
+    &::down-button {
+        background-color: transparent;
+        border: none;
+        width: $sizeUnit * 6 + px;
+        subcontrol-origin: border;
+    }
+
+    &::up-button {
+        subcontrol-position: top right;
+        margin: 1px;
+        margin-bottom: -1px;
+    }
+
+    &::down-button {
+        subcontrol-position: bottom right;
+        margin: 1px;
+        margin-top: -1px;
+    }
+
+    &::up-arrow {
+        image: url(icons/spin_box_up_arrow_24.svg);
+        width: $sizeUnit * 5 + px;
+        height: $sizeUnit * 5 + px;
+    }
+
+    &::down-arrow {
+        image: url(icons/spin_box_down_arrow_24.svg);
+        width: $sizeUnit * 5 + px;
+        height: $sizeUnit * 5 + px;
+    }
+
+    &:hover {
+        border-color: $colorPrimary;
+    }
+
+    &:focus {
+        border-color: $colorPrimary;
+    }
+
+    &:disabled {
+        background-color: $colorBgDisabled;
+        border-color: $colorBorderDisabled;
+        color: $colorTextDisabled;
+    }
+
+    // 状态样式
+    &.success {
+        border-color: $colorSuccess;
+        &:focus {
+            border-color: darken($colorSuccess, 15%);
+        }
+    }
+
+    &.warning {
+        border-color: $colorWarning;
+        &:focus {
+            border-color: darken($colorWarning, 15%);
+        }
+    }
+
+    &.error {
+        border-color: $colorError;
+        &:focus {
+            border-color: darken($colorError, 15%);
+        }
+    }
+
+    // 尺寸样式
+    &.small {
+        min-height: $height-small;
+        padding: 0 $sizeUnit * 2 + px;
+        font-size: $font-small;
+
+        &::up-button,
+        &::down-button {
+            width: $sizeUnit * 5 + px;
+        }
+
+        &::up-arrow,
+        &::down-arrow {
+            width: $sizeUnit * 4 + px;
+            height: $sizeUnit * 4 + px;
+        }
+    }
+
+    &.large {
+        min-height: $height-large;
+        padding: 0 $sizeUnit * 4 + px;
+        font-size: $font-large;
+
+        &::up-button,
+        &::down-button {
+            width: $sizeUnit * 7 + px;
+        }
+
+        &::up-arrow,
+        &::down-arrow {
+            width: $sizeUnit * 6 + px;
+            height: $sizeUnit * 6 + px;
+        }
+    }
+}

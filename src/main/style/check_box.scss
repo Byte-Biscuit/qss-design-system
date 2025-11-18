@@ -1,0 +1,64 @@
+// 基础样式
+QCheckBox {
+    min-height: $height-normal;
+    font-size: $font-normal;
+    color: $colorTextBase;
+    spacing: $sizeUnit + px;
+
+    &::indicator {
+        width: $sizeUnit * 5 + px;
+        height: $sizeUnit * 5 + px;
+    }
+
+    &::indicator:unchecked {
+        image: url(icons/check_box_unchecked_24.svg);
+    }
+    &::indicator:unchecked:hover {
+        image: url(icons/check_box_unchecked_hover_24.svg);
+    }
+    &::indicator:unchecked:pressed {
+        image: url(icons/check_box_unchecked_pressed_24.svg);
+    }
+
+    &::indicator:checked {
+        image: url(icons/check_box_checked_24.svg);
+    }
+    &::indicator:checked:hover {
+        image: url(icons/check_box_checked_hover_24.svg);
+    }
+    &::indicator:checked:pressed {
+        image: url(icons/check_box_checked_pressed_24.svg);
+    }
+
+    &::indicator:indeterminate:hover {
+        image: url(icons/check_box_indeterminate_hover_24.svg);
+    }
+    &::indicator:indeterminate:pressed {
+        image: url(icons/check_box_indeterminate_pressed_24.svg);
+    }
+
+    &::indicator:disabled:unchecked {
+        image: url(icons/check_box_unchecked_disabled_24.svg);
+    }
+    &::indicator:disabled:checked {
+        image: url(icons/check_box_checked_disabled_24.svg);
+    }
+
+    &.small {
+        min-height: $height-small;
+        font-size: $font-small;
+        &::indicator {
+            width: $sizeUnit * 4 + px;
+            height: $sizeUnit * 4 + px;
+        }
+    }
+
+    &.large {
+        min-height: $height-large;
+        font-size: $font-large;
+        &::indicator {
+            width: $sizeUnit * 6 + px;
+            height: $sizeUnit * 6 + px;
+        }
+    }
+}

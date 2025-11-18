@@ -1,0 +1,127 @@
+// Button size mixin
+@mixin btn-size($height, $padding, $font-size, $font-weight: 400) {
+    min-height: $height;
+    padding: $padding;
+    font-size: $font-size;
+    font-weight: $font-weight;
+}
+
+// Danger button style mixin
+@mixin danger-style($background: null, $hover-lighten: 8%) {
+    border-color: $colorError;
+    color: $colorError;
+
+    @if $background != null {
+        background-color: $colorError;
+        color: $colorBgBase;
+        &:hover {
+            background-color: lighten($colorError, $hover-lighten);
+        }
+    } @else {
+        &:hover {
+            border-color: lighten($colorError, $hover-lighten);
+            color: lighten($colorError, $hover-lighten);
+        }
+    }
+}
+
+// Shared button style mixin
+@mixin btn-shared-style(
+    $background-color: $colorBgBase,
+    $color: rgba(0, 0, 0, 0.88),
+    $border-color: $colorBorder
+) {
+    background-color: $background-color;
+    color: $color;
+    border: $lineWidth $lineType $border-color;
+}
+
+// QPushButton base styles
+QPushButton {
+    border-radius: $borderRadius;
+    @include btn-size($height-normal, $padding-normal, $font-normal);
+    @include btn-shared-style();
+
+    &:disabled {
+        background-color: $colorBgDisabled;
+        color: $colorTextDisabled;
+        border-color: $colorBorderDisabled;
+    }
+
+    // Size variants
+    &.large {
+        @include btn-size($height-large, $padding-large, $font-large);
+    }
+    &.small {
+        @include btn-size($height-small, $padding-small, $font-small);
+    }
+
+    &:hover {
+        @include btn-shared-style(
+            $color: $colorPrimary,
+            $border-color: $colorPrimary
+        );
+    }
+    &.danger {
+        @include danger-style();
+    }
+
+    // Primary button
+    &.primary {
+        @include btn-shared-style(
+            $background-color: $colorPrimary,
+            $color: $colorBgBase,
+            $border-color: $colorPrimary
+        );
+        &:hover {
+            background-color: lighten($colorPrimary, 8%);
+        }
+        &.danger {
+            @include danger-style($background: $colorError);
+        }
+    }
+
+    // Dashed button
+    &.dashed {
+        border: $lineWidth dashed $colorBorder;
+        &:hover {
+            @include btn-shared-style(
+                $color: $colorPrimary,
+                $border-color: $colorPrimary
+            );
+        }
+        &.danger {
+            @include danger-style();
+        }
+    }
+
+    // Text button
+    &.text {
+        border: none;
+        &:hover {
+            color: $colorPrimary;
+            background-color: darken($colorBgBase, 10%);
+        }
+        &.danger {
+            color: $colorError;
+            &:hover {
+                background-color: lighten($colorError, 30%);
+            }
+        }
+    }
+
+    // Link button
+    &.link {
+        border: none;
+        color: $colorPrimary;
+        &:hover {
+            color: lighten($colorPrimary, 15%);
+        }
+        &.danger {
+            color: $colorError;
+            &:hover {
+                color: lighten($colorError, 8%);
+            }
+        }
+    }
+}

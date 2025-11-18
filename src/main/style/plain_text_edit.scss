@@ -1,0 +1,9 @@
+QPlainTextEdit {
+    background-color: $colorBgBase;
+    color: $colorTextBase;
+    font-size: $font-normal;
+    line-height: $lineHeight-normal;
+    border: $lineWidth + px $lineType #d9d9d9;
+    border-radius: $borderRadius + px;
+    padding: $sizeUnit + px $sizeUnit * 0.2 + px;
+}
