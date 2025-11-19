@@ -1,6 +1,6 @@
 [project]
 name = "qss-design-system"
-version = "0.0.2"
+version = "0.0.3"
 description = "A QSS design system for PySide6 (Qt) desktop applications, inspired by Ant Design.Simply include the generated QSS file to apply a consistent visual style to common widgets (buttons, inputs, trees, dialogs, etc.) with minimal adjustments, enabling easy reuse and extension."
 keywords = ["qss", "pyside6", "qt", "stylesheet", "design-system", "antd", "ui", "theme"]
 classifiers = [

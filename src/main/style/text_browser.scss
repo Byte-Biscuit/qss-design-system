@@ -1,0 +1,23 @@
+QTextBrowser {
+    background-color: $colorBgBase;
+    color: $colorTextBase;
+    font-size: $font-normal;
+    line-height: $lineHeight-normal;
+    border: $lineWidth + px $lineType $colorBorder;
+    border-radius: $borderRadius + px;
+    padding: $sizeUnit * 3 + px $sizeUnit * 3 + px;
+
+    &:hover {
+        border-color: $colorPrimary;
+    }
+
+    &:focus {
+        border-color: $colorPrimary;
+    }
+
+    &:disabled {
+        background-color: $colorBgDisabled;
+        border-color: $colorBorderDisabled;
+        color: $colorTextDisabled;
+    }
+}

@@ -13,6 +13,7 @@ from main.component.line_edit import apply_line_edit_style
 from main.component.tree_view import apply_tree_view_style
 from main.component.label import apply_label_style
 from main.component.plain_text_edit import apply_plain_text_edit_style
+from main.component.text_browser import apply_text_browser_style
 from main.component.splitter import apply_splitter_style
 from main.component.check_box import apply_check_box_style
 from main.component.combo_box import apply_combo_box_style
@@ -51,6 +52,8 @@ class MainWindow(QMainWindow, UiMainWindow):
         apply_menu_style(window=self)
         # QPlainTextEdit
         apply_plain_text_edit_style(window=self)
+        # QTextBrowser
+        apply_text_browser_style(window=self)
         # QSplitter
         apply_splitter_style(window=self)
         # QCheckBox

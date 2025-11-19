@@ -21,7 +21,7 @@ from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QFormLayout,
     QLineEdit, QMainWindow, QMenu, QMenuBar,
     QPlainTextEdit, QPushButton, QSizePolicy, QSpacerItem,
     QSpinBox, QSplitter, QStatusBar, QTabWidget,
-    QTreeView, QVBoxLayout, QWidget)
+    QTextBrowser, QTreeView, QVBoxLayout, QWidget)
 
 class Ui_main_window(object):
     def setupUi(self, main_window):
@@ -477,6 +477,30 @@ class Ui_main_window(object):
         self.verticalLayout_6.setStretch(0, 2)
         self.verticalLayout_6.setStretch(1, 1)
         self.example_tab.addTab(self.tab_plain_text_edit, "")
+        self.tab_text_browser = QWidget()
+        self.tab_text_browser.setObjectName(u"tab_text_browser")
+        self.text_browser_layout = QVBoxLayout(self.tab_text_browser)
+        self.text_browser_layout.setSpacing(15)
+        self.text_browser_layout.setObjectName(u"text_browser_layout")
+        self.text_browser_layout.setContentsMargins(20, 20, 20, 20)
+        self.text_browser_row1 = QHBoxLayout()
+        self.text_browser_row1.setObjectName(u"text_browser_row1")
+        self.default_text_browser = QTextBrowser(self.tab_text_browser)
+        self.default_text_browser.setObjectName(u"default_text_browser")
+        self.default_text_browser.setMinimumSize(QSize(0, 100))
+
+        self.text_browser_row1.addWidget(self.default_text_browser)
+
+
+        self.text_browser_layout.addLayout(self.text_browser_row1)
+
+        self.text_browser_help_label = QLabel(self.tab_text_browser)
+        self.text_browser_help_label.setObjectName(u"text_browser_help_label")
+        self.text_browser_help_label.setTextInteractionFlags(Qt.TextInteractionFlag.LinksAccessibleByMouse|Qt.TextInteractionFlag.TextSelectableByKeyboard|Qt.TextInteractionFlag.TextSelectableByMouse)
+
+        self.text_browser_layout.addWidget(self.text_browser_help_label)
+
+        self.example_tab.addTab(self.tab_text_browser, "")
         self.check_box_tab = QWidget()
         self.check_box_tab.setObjectName(u"check_box_tab")
         self.verticalLayout_7 = QVBoxLayout(self.check_box_tab)
@@ -814,6 +838,8 @@ class Ui_main_window(object):
         self.example_tab.setTabText(self.example_tab.indexOf(self.tab_splitter), QCoreApplication.translate("main_window", u"QSplitter", None))
         self.plain_text_edit_style_label.setText(QCoreApplication.translate("main_window", u"TextLabel", None))
         self.example_tab.setTabText(self.example_tab.indexOf(self.tab_plain_text_edit), QCoreApplication.translate("main_window", u"QPlainTextEdit", None))
+        self.text_browser_help_label.setText(QCoreApplication.translate("main_window", u"TextLabel", None))
+        self.example_tab.setTabText(self.example_tab.indexOf(self.tab_text_browser), QCoreApplication.translate("main_window", u"QTextBrowser", None))
         self.default_check_box.setText(QCoreApplication.translate("main_window", u"Default CheckBox", None))
         self.small_check_box.setText(QCoreApplication.translate("main_window", u"Small CheckBox", None))
         self.large_check_box.setText(QCoreApplication.translate("main_window", u"Large CheckBox", None))

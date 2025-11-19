@@ -67,6 +67,12 @@ i18n = {
             "🧪 仅需导入QSS文件，样式将自动应用\n"
             "🎯 包含默认文本颜色、背景色、边框等基础样式"
         ),
+        "text_browser_style": (
+            "📖 QTextBrowser 样式已预设，导入QSS后自动生效。\n"
+            "👉 用于显示只读的富文本HTML内容\n"
+            "🧪 支持超链接、格式化文本等富文本特性\n"
+            "🎯 默认样式包含边框hover效果和焦点状态"
+        ),
         "splitter_style": (
             "🔧 分割线样式已预设，导入QSS后自动生效。\n"
             "👉 使用方式：无需进行额外样式设定\n"
@@ -169,6 +175,12 @@ i18n = {
             "👉 Usage: No additional style settings required\n"
             "🧪 Just import the QSS file, and the style will be applied automatically\n"
             "🎯 Includes default text color, background color, border, and other basic styles"
+        ),
+        "text_browser_style": (
+            "📖 QTextBrowser style is preset and will take effect automatically after importing QSS.\n"
+            "👉 Used for displaying read-only rich text HTML content\n"
+            "🧪 Supports hyperlinks, formatted text, and other rich text features\n"
+            "🎯 Default style includes border hover effect and focus state"
         ),
         "splitter_style": (
             "🔧 Splitter style is preset and will take effect automatically after importing QSS.\n"
